@@ -40,7 +40,7 @@ class Db;
 class Table
 {
 public:
-  Table() = default;
+   Table() = default;
   ~Table();
 
   /**
@@ -53,6 +53,11 @@ public:
    */
   RC create(Db *db, int32_t table_id, const char *path, const char *name, const char *base_dir,
       span<const AttrInfoSqlNode> attributes, StorageFormat storage_format);
+
+  /**
+   * 删除一个表
+   */
+  RC drop();
 
   /**
    * 打开一个表
